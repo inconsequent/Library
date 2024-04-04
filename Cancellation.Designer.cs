@@ -28,25 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            back = new Button();
             SuspendLayout();
             // 
-            // button1
+            // back
             // 
-            button1.Location = new Point(288, 578);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 0;
-            button1.Text = "Назад";
-            button1.TextAlign = ContentAlignment.BottomCenter;
-            button1.UseVisualStyleBackColor = true;
+            back.Dock = DockStyle.Bottom;
+            back.Location = new Point(0, 599);
+            back.Name = "back";
+            back.Size = new Size(713, 34);
+            back.TabIndex = 0;
+            back.Text = "Назад";
+            back.TextAlign = ContentAlignment.BottomCenter;
+            back.UseVisualStyleBackColor = true;
+            back.Click += button1_Click;
             // 
             // Cancellation
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(713, 633);
-            Controls.Add(button1);
+            Controls.Add(back);
             Name = "Cancellation";
             Text = "Cancellation";
             ResumeLayout(false);
@@ -54,6 +56,6 @@
 
         #endregion
 
-        private Button button1;
+        private Button back;
     }
 }

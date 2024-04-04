@@ -38,6 +38,7 @@
             guide = new Button();
             panel2 = new Panel();
             lable11 = new Label();
+            close = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -45,6 +46,7 @@
             // panel1
             // 
             panel1.BackColor = Color.AntiqueWhite;
+            panel1.Controls.Add(close);
             panel1.Controls.Add(purchase);
             panel1.Controls.Add(providers);
             panel1.Controls.Add(cards);
@@ -134,7 +136,7 @@
             // 
             guide.Cursor = Cursors.Hand;
             guide.Font = new Font("SimSun", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guide.Location = new Point(222, 139);
+            guide.Location = new Point(222, 135);
             guide.Name = "guide";
             guide.Size = new Size(253, 48);
             guide.TabIndex = 0;
@@ -163,6 +165,18 @@
             lable11.Text = "Библиотека";
             lable11.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // close
+            // 
+            close.Cursor = Cursors.Hand;
+            close.Font = new Font("SimSun", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            close.Location = new Point(222, 537);
+            close.Name = "close";
+            close.Size = new Size(253, 48);
+            close.TabIndex = 7;
+            close.Text = "Закрыть";
+            close.UseVisualStyleBackColor = true;
+            close.Click += this.Close_Click;
+            // 
             // Library
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -190,5 +204,6 @@
         private Button readers;
         private Button place;
         private Button guide;
+        private Button close;
     }
 }

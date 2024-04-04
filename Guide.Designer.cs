@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            back = new Button();
             listBox1 = new ListBox();
             panel2 = new Panel();
             lable11 = new Label();
@@ -39,6 +40,7 @@
             // panel1
             // 
             panel1.BackColor = Color.AntiqueWhite;
+            panel1.Controls.Add(back);
             panel1.Controls.Add(listBox1);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
@@ -47,13 +49,27 @@
             panel1.Size = new Size(713, 633);
             panel1.TabIndex = 1;
             // 
+            // back
+            // 
+            back.Dock = DockStyle.Bottom;
+            back.Font = new Font("SimSun", 10F, FontStyle.Bold);
+            back.Location = new Point(0, 599);
+            back.Name = "back";
+            back.Size = new Size(713, 34);
+            back.TabIndex = 2;
+            back.Text = "Назад";
+            back.TextAlign = ContentAlignment.BottomCenter;
+            back.UseVisualStyleBackColor = true;
+            back.Click += back_Click;
+            // 
             // listBox1
             // 
+            listBox1.BackColor = Color.AntiqueWhite;
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 25;
             listBox1.Location = new Point(0, 100);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(713, 529);
+            listBox1.Size = new Size(713, 504);
             listBox1.TabIndex = 3;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
@@ -99,5 +115,6 @@
         private Panel panel2;
         private Label lable11;
         private ListBox listBox1;
+        private Button back;
     }
 }
