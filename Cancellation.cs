@@ -19,9 +19,16 @@ namespace Library
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+           // прописать сохранение ввода форм
+           this.Close();
             Library back = new Library();
             back.Show();
         }
+
+        private void Cancellation_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

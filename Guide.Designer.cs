@@ -29,25 +29,36 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            guidegrid = new DataGridView();
             back = new Button();
-            listBox1 = new ListBox();
             panel2 = new Panel();
             lable11 = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guidegrid).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.AntiqueWhite;
+            panel1.Controls.Add(guidegrid);
             panel1.Controls.Add(back);
-            panel1.Controls.Add(listBox1);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(713, 633);
             panel1.TabIndex = 1;
+            // 
+            // guidegrid
+            // 
+            guidegrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            guidegrid.Location = new Point(12, 106);
+            guidegrid.Name = "guidegrid";
+            guidegrid.RowHeadersWidth = 62;
+            guidegrid.Size = new Size(689, 302);
+            guidegrid.TabIndex = 3;
+            guidegrid.CellContentClick += guidegrid_CellContentClick;
             // 
             // back
             // 
@@ -61,17 +72,6 @@
             back.TextAlign = ContentAlignment.BottomCenter;
             back.UseVisualStyleBackColor = true;
             back.Click += back_Click;
-            // 
-            // listBox1
-            // 
-            listBox1.BackColor = Color.AntiqueWhite;
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 25;
-            listBox1.Location = new Point(0, 100);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(713, 504);
-            listBox1.TabIndex = 3;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // panel2
             // 
@@ -104,6 +104,7 @@
             Text = "Guide";
             Load += Guide_Load;
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)guidegrid).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -114,7 +115,7 @@
         private Panel panel1;
         private Panel panel2;
         private Label lable11;
-        private ListBox listBox1;
         private Button back;
+        private DataGridView guidegrid;
     }
 }
