@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            close = new Button();
             purchase = new Button();
             providers = new Button();
             cards = new Button();
@@ -38,7 +39,6 @@
             guide = new Button();
             panel2 = new Panel();
             lable11 = new Label();
-            close = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -60,6 +60,18 @@
             panel1.Size = new Size(713, 633);
             panel1.TabIndex = 0;
             // 
+            // close
+            // 
+            close.Cursor = Cursors.Hand;
+            close.Font = new Font("SimSun", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            close.Location = new Point(222, 537);
+            close.Name = "close";
+            close.Size = new Size(253, 48);
+            close.TabIndex = 7;
+            close.Text = "Закрыть";
+            close.UseVisualStyleBackColor = true;
+            close.Click += Close_Click;
+            // 
             // purchase
             // 
             purchase.Cursor = Cursors.Hand;
@@ -68,7 +80,7 @@
             purchase.Name = "purchase";
             purchase.Size = new Size(253, 48);
             purchase.TabIndex = 6;
-            purchase.Text = "Поставки";
+            purchase.Text = "Закупки";
             purchase.UseVisualStyleBackColor = true;
             purchase.Click += purchase_Click;
             // 
@@ -164,18 +176,6 @@
             lable11.TabIndex = 0;
             lable11.Text = "Библиотека";
             lable11.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // close
-            // 
-            close.Cursor = Cursors.Hand;
-            close.Font = new Font("SimSun", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            close.Location = new Point(222, 537);
-            close.Name = "close";
-            close.Size = new Size(253, 48);
-            close.TabIndex = 7;
-            close.Text = "Закрыть";
-            close.UseVisualStyleBackColor = true;
-            close.Click += this.Close_Click;
             // 
             // Library
             // 

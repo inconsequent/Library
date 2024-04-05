@@ -64,7 +64,7 @@ namespace Library
         {
            
         }
-
+        // подклюсение и вывод бд
         private void CreateColumns() 
         {
             guidegrid.Columns.Add("idBook", "№");

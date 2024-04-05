@@ -19,8 +19,8 @@ namespace Library
 
         private void button1_Click(object sender, EventArgs e)
         {
-           // прописать сохранение ввода форм
-           this.Close();
+            // прописать сохранение ввода форм
+            this.Close();
             Library back = new Library();
             back.Show();
         }
@@ -30,5 +30,9 @@ namespace Library
 
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

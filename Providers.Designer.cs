@@ -32,8 +32,18 @@
             panel1 = new Panel();
             panel2 = new Panel();
             lable11 = new Label();
+            providersgrid = new DataGridView();
+            label1 = new Label();
+            label2 = new Label();
+            delete = new Button();
+            change = new Button();
+            save = new Button();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            label3 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)providersgrid).BeginInit();
             SuspendLayout();
             // 
             // back
@@ -52,6 +62,15 @@
             // 
             panel1.BackColor = Color.AntiqueWhite;
             panel1.Controls.Add(panel2);
+            panel1.Controls.Add(providersgrid);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(delete);
+            panel1.Controls.Add(save);
+            panel1.Controls.Add(change);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -79,6 +98,88 @@
             lable11.Text = "Поставщики";
             lable11.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // providersgrid
+            // 
+            providersgrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            providersgrid.Location = new Point(12, 106);
+            providersgrid.Name = "providersgrid";
+            providersgrid.RowHeadersWidth = 62;
+            providersgrid.Size = new Size(521, 311);
+            providersgrid.TabIndex = 45;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("SimSun", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(257, 420);
+            label1.Name = "label1";
+            label1.Size = new Size(213, 33);
+            label1.TabIndex = 46;
+            label1.Text = "Запись";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("SimSun", 10F, FontStyle.Bold);
+            label2.Location = new Point(36, 472);
+            label2.Name = "label2";
+            label2.Size = new Size(105, 20);
+            label2.TabIndex = 47;
+            label2.Text = "Ф.И.О.";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // delete
+            // 
+            delete.Location = new Point(549, 113);
+            delete.Name = "delete";
+            delete.Size = new Size(151, 45);
+            delete.TabIndex = 48;
+            delete.Text = "Удалить";
+            delete.UseVisualStyleBackColor = true;
+            // 
+            // change
+            // 
+            change.Location = new Point(549, 189);
+            change.Name = "change";
+            change.Size = new Size(151, 45);
+            change.TabIndex = 49;
+            change.Text = "Изменить";
+            change.UseVisualStyleBackColor = true;
+            // 
+            // save
+            // 
+            save.Location = new Point(549, 270);
+            save.Name = "save";
+            save.Size = new Size(151, 45);
+            save.TabIndex = 50;
+            save.Text = "Сохранить";
+            save.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(147, 466);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(539, 31);
+            textBox1.TabIndex = 51;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(147, 510);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(539, 31);
+            textBox2.TabIndex = 52;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("SimSun", 10F, FontStyle.Bold);
+            label3.Location = new Point(27, 516);
+            label3.Name = "label3";
+            label3.Size = new Size(114, 20);
+            label3.TabIndex = 53;
+            label3.Text = "Адрес";
+            // 
             // Providers
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -89,8 +190,10 @@
             Name = "Providers";
             Text = "Providers";
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)providersgrid).EndInit();
             ResumeLayout(false);
         }
 
@@ -100,5 +203,14 @@
         private Panel panel1;
         private Panel panel2;
         private Label lable11;
+        private DataGridView providersgrid;
+        private Label label3;
+        private Label label1;
+        private TextBox textBox2;
+        private Label label2;
+        private TextBox textBox1;
+        private Button delete;
+        private Button save;
+        private Button change;
     }
 }
