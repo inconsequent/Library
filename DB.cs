@@ -8,7 +8,17 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-     class DB
+
+    enum RowState
+    {
+        Existed,
+        New,
+        Modified,
+        ModifiedNew,
+        Deleted
+    }
+
+    class DB
     {
         MySqlConnection connection = new MySqlConnection("server=localhost; port=8889; username=root; password=root; database=Library2");
 

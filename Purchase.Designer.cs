@@ -30,6 +30,12 @@
         {
             back = new Button();
             panel1 = new Panel();
+            textBox6 = new TextBox();
+            label7 = new Label();
+            textBox5 = new TextBox();
+            label6 = new Label();
+            textBox4 = new TextBox();
+            label5 = new Label();
             textBox3 = new TextBox();
             panel2 = new Panel();
             lable11 = new Label();
@@ -43,12 +49,6 @@
             delete = new Button();
             save = new Button();
             change = new Button();
-            textBox4 = new TextBox();
-            label5 = new Label();
-            textBox5 = new TextBox();
-            label6 = new Label();
-            textBox6 = new TextBox();
-            label7 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)purcgrid).BeginInit();
@@ -92,6 +92,57 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(713, 599);
             panel1.TabIndex = 3;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(216, 375);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(484, 31);
+            textBox6.TabIndex = 61;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("SimSun", 10F, FontStyle.Bold);
+            label7.Location = new Point(33, 381);
+            label7.Name = "label7";
+            label7.Size = new Size(177, 20);
+            label7.TabIndex = 60;
+            label7.Text = "Название";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(216, 412);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(484, 31);
+            textBox5.TabIndex = 59;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("SimSun", 10F, FontStyle.Bold);
+            label6.Location = new Point(96, 418);
+            label6.Name = "label6";
+            label6.Size = new Size(114, 20);
+            label6.TabIndex = 58;
+            label6.Text = "Автор";
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(216, 449);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(484, 31);
+            textBox4.TabIndex = 57;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("SimSun", 10F, FontStyle.Bold);
+            label5.Location = new Point(117, 455);
+            label5.Name = "label5";
+            label5.Size = new Size(93, 20);
+            label5.TabIndex = 56;
+            label5.Text = "Жанр";
             // 
             // textBox3
             // 
@@ -214,57 +265,6 @@
             change.Text = "Изменить";
             change.UseVisualStyleBackColor = true;
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(216, 449);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(484, 31);
-            textBox4.TabIndex = 57;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("SimSun", 10F, FontStyle.Bold);
-            label5.Location = new Point(117, 455);
-            label5.Name = "label5";
-            label5.Size = new Size(93, 20);
-            label5.TabIndex = 56;
-            label5.Text = "Жанр";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(216, 412);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(484, 31);
-            textBox5.TabIndex = 59;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("SimSun", 10F, FontStyle.Bold);
-            label6.Location = new Point(96, 418);
-            label6.Name = "label6";
-            label6.Size = new Size(114, 20);
-            label6.TabIndex = 58;
-            label6.Text = "Автор";
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(216, 375);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(484, 31);
-            textBox6.TabIndex = 61;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("SimSun", 10F, FontStyle.Bold);
-            label7.Location = new Point(33, 381);
-            label7.Name = "label7";
-            label7.Size = new Size(177, 20);
-            label7.TabIndex = 60;
-            label7.Text = "Название";
-            // 
             // Purchase
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -274,6 +274,7 @@
             Controls.Add(back);
             Name = "Purchase";
             Text = "Purchase";
+            Load += Purchase_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

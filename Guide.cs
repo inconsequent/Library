@@ -10,21 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Library
 {
-
-    enum RowState 
-    {
-    Existed,
-    New,
-    Modified,
-    ModifiedNew,
-    Deleted
-    }
- 
-
-
     public partial class Guide : Form
     {
         DB DB = new DB();
@@ -67,11 +56,10 @@ namespace Library
         // подклюсение и вывод бд
         private void CreateColumns() 
         {
-            guidegrid.Columns.Add("idBook", "№");
+            guidegrid.Columns.Add("bookId", "№");
             guidegrid.Columns.Add("genre", "Жанр");
             guidegrid.Columns.Add("name", "Название");
             guidegrid.Columns.Add("IsNew", string.Empty);
-
         }
         private void ReadSingleRow( DataGridView dgw,IDataRecord record )
         {

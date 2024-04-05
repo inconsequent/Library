@@ -30,6 +30,7 @@
         {
             back = new Button();
             panel1 = new Panel();
+            notRelevant = new Button();
             textBox3 = new TextBox();
             label4 = new Label();
             label3 = new Label();
@@ -43,7 +44,6 @@
             cardsgrid = new DataGridView();
             panel2 = new Panel();
             lable11 = new Label();
-            notRelevant = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cardsgrid).BeginInit();
             panel2.SuspendLayout();
@@ -82,6 +82,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(713, 599);
             panel1.TabIndex = 2;
+            // 
+            // notRelevant
+            // 
+            notRelevant.Location = new Point(549, 343);
+            notRelevant.Name = "notRelevant";
+            notRelevant.Size = new Size(151, 45);
+            notRelevant.TabIndex = 34;
+            notRelevant.Text = "Должники";
+            notRelevant.UseVisualStyleBackColor = true;
             // 
             // textBox3
             // 
@@ -203,15 +212,6 @@
             lable11.Text = "Карточки";
             lable11.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // notRelevant
-            // 
-            notRelevant.Location = new Point(549, 343);
-            notRelevant.Name = "notRelevant";
-            notRelevant.Size = new Size(151, 45);
-            notRelevant.TabIndex = 34;
-            notRelevant.Text = "Должники";
-            notRelevant.UseVisualStyleBackColor = true;
-            // 
             // Cards
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -221,6 +221,7 @@
             Controls.Add(back);
             Name = "Cards";
             Text = "Cards";
+            Load += Cards_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)cardsgrid).EndInit();

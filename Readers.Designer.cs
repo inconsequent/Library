@@ -30,8 +30,6 @@
         {
             back = new Button();
             panel1 = new Panel();
-            panel2 = new Panel();
-            lable11 = new Label();
             label3 = new Label();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
@@ -40,10 +38,12 @@
             delete = new Button();
             label2 = new Label();
             label1 = new Label();
-            readerssgrid = new DataGridView();
+            readersgrid = new DataGridView();
+            panel2 = new Panel();
+            lable11 = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)readersgrid).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)readerssgrid).BeginInit();
             SuspendLayout();
             // 
             // back
@@ -69,34 +69,13 @@
             panel1.Controls.Add(delete);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(readerssgrid);
+            panel1.Controls.Add(readersgrid);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(713, 599);
             panel1.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.NavajoWhite;
-            panel2.Controls.Add(lable11);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(713, 100);
-            panel2.TabIndex = 2;
-            // 
-            // lable11
-            // 
-            lable11.AutoSize = true;
-            lable11.Font = new Font("SimSun", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lable11.Location = new Point(188, 30);
-            lable11.Name = "lable11";
-            lable11.Size = new Size(279, 33);
-            lable11.TabIndex = 0;
-            lable11.Text = "Читатели";
-            lable11.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -171,14 +150,35 @@
             label1.Text = "Запись";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // readerssgrid
+            // readersgrid
             // 
-            readerssgrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            readerssgrid.Location = new Point(12, 106);
-            readerssgrid.Name = "readerssgrid";
-            readerssgrid.RowHeadersWidth = 62;
-            readerssgrid.Size = new Size(521, 311);
-            readerssgrid.TabIndex = 45;
+            readersgrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            readersgrid.Location = new Point(12, 106);
+            readersgrid.Name = "readersgrid";
+            readersgrid.RowHeadersWidth = 62;
+            readersgrid.Size = new Size(521, 311);
+            readersgrid.TabIndex = 45;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.NavajoWhite;
+            panel2.Controls.Add(lable11);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(713, 100);
+            panel2.TabIndex = 2;
+            // 
+            // lable11
+            // 
+            lable11.AutoSize = true;
+            lable11.Font = new Font("SimSun", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lable11.Location = new Point(188, 30);
+            lable11.Name = "lable11";
+            lable11.Size = new Size(279, 33);
+            lable11.TabIndex = 0;
+            lable11.Text = "Читатели";
+            lable11.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Readers
             // 
@@ -189,11 +189,12 @@
             Controls.Add(back);
             Name = "Readers";
             Text = "Readers";
+            Load += Readers_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)readersgrid).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)readerssgrid).EndInit();
             ResumeLayout(false);
         }
 
@@ -211,6 +212,6 @@
         private Button delete;
         private Label label2;
         private Label label1;
-        private DataGridView readerssgrid;
+        private DataGridView readersgrid;
     }
 }

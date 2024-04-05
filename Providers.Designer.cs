@@ -33,14 +33,14 @@
             panel2 = new Panel();
             lable11 = new Label();
             providersgrid = new DataGridView();
-            label1 = new Label();
-            label2 = new Label();
-            delete = new Button();
-            change = new Button();
-            save = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
             label3 = new Label();
+            label1 = new Label();
+            textBox2 = new TextBox();
+            label2 = new Label();
+            textBox1 = new TextBox();
+            delete = new Button();
+            save = new Button();
+            change = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)providersgrid).BeginInit();
@@ -107,6 +107,16 @@
             providersgrid.Size = new Size(521, 311);
             providersgrid.TabIndex = 45;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("SimSun", 10F, FontStyle.Bold);
+            label3.Location = new Point(27, 516);
+            label3.Name = "label3";
+            label3.Size = new Size(114, 20);
+            label3.TabIndex = 53;
+            label3.Text = "Адрес";
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -117,6 +127,13 @@
             label1.TabIndex = 46;
             label1.Text = "Запись";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(147, 510);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(539, 31);
+            textBox2.TabIndex = 52;
             // 
             // label2
             // 
@@ -129,6 +146,13 @@
             label2.Text = "Ф.И.О.";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(147, 466);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(539, 31);
+            textBox1.TabIndex = 51;
+            // 
             // delete
             // 
             delete.Location = new Point(549, 113);
@@ -137,15 +161,6 @@
             delete.TabIndex = 48;
             delete.Text = "Удалить";
             delete.UseVisualStyleBackColor = true;
-            // 
-            // change
-            // 
-            change.Location = new Point(549, 189);
-            change.Name = "change";
-            change.Size = new Size(151, 45);
-            change.TabIndex = 49;
-            change.Text = "Изменить";
-            change.UseVisualStyleBackColor = true;
             // 
             // save
             // 
@@ -156,29 +171,14 @@
             save.Text = "Сохранить";
             save.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // change
             // 
-            textBox1.Location = new Point(147, 466);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(539, 31);
-            textBox1.TabIndex = 51;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(147, 510);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(539, 31);
-            textBox2.TabIndex = 52;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("SimSun", 10F, FontStyle.Bold);
-            label3.Location = new Point(27, 516);
-            label3.Name = "label3";
-            label3.Size = new Size(114, 20);
-            label3.TabIndex = 53;
-            label3.Text = "Адрес";
+            change.Location = new Point(549, 189);
+            change.Name = "change";
+            change.Size = new Size(151, 45);
+            change.TabIndex = 49;
+            change.Text = "Изменить";
+            change.UseVisualStyleBackColor = true;
             // 
             // Providers
             // 
@@ -189,6 +189,7 @@
             Controls.Add(back);
             Name = "Providers";
             Text = "Providers";
+            Load += Providers_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

@@ -30,8 +30,6 @@
         {
             back = new Button();
             panel1 = new Panel();
-            panel2 = new Panel();
-            lable11 = new Label();
             textBox3 = new TextBox();
             label4 = new Label();
             label3 = new Label();
@@ -43,9 +41,11 @@
             label2 = new Label();
             label1 = new Label();
             placesgrid = new DataGridView();
+            panel2 = new Panel();
+            lable11 = new Label();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)placesgrid).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // back
@@ -80,27 +80,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(713, 599);
             panel1.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.NavajoWhite;
-            panel2.Controls.Add(lable11);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(713, 100);
-            panel2.TabIndex = 2;
-            // 
-            // lable11
-            // 
-            lable11.AutoSize = true;
-            lable11.Font = new Font("SimSun", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lable11.Location = new Point(146, 35);
-            lable11.Name = "lable11";
-            lable11.Size = new Size(411, 33);
-            lable11.TabIndex = 0;
-            lable11.Text = "Расположение";
-            lable11.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // textBox3
             // 
@@ -201,6 +180,27 @@
             placesgrid.Size = new Size(521, 311);
             placesgrid.TabIndex = 34;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.NavajoWhite;
+            panel2.Controls.Add(lable11);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(713, 100);
+            panel2.TabIndex = 2;
+            // 
+            // lable11
+            // 
+            lable11.AutoSize = true;
+            lable11.Font = new Font("SimSun", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lable11.Location = new Point(146, 35);
+            lable11.Name = "lable11";
+            lable11.Size = new Size(411, 33);
+            lable11.TabIndex = 0;
+            lable11.Text = "Расположение";
+            lable11.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Place
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -210,11 +210,12 @@
             Controls.Add(back);
             Name = "Place";
             Text = "Place";
+            Load += Place_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)placesgrid).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)placesgrid).EndInit();
             ResumeLayout(false);
         }
 
