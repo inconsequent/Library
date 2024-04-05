@@ -46,44 +46,52 @@ namespace Library
 
         private void guidegrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-          
+
         }
 
-        private void LoadData()
-        {
-           
-        }
+       
         // подклюсение и вывод бд
-        private void CreateColumns() 
+        private void CreateColumns()
         {
             guidegrid.Columns.Add("bookId", "№");
             guidegrid.Columns.Add("genre", "Жанр");
+            guidegrid.Columns.Add("author", "Автор");
             guidegrid.Columns.Add("name", "Название");
             guidegrid.Columns.Add("IsNew", string.Empty);
         }
-        private void ReadSingleRow( DataGridView dgw,IDataRecord record )
+        private void ReadSingleRow(DataGridView dgw, IDataRecord record)
         {
-            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2),RowState.ModifiedNew);
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetString(3), RowState.ModifiedNew);
         }
 
         private void RefreshDataGrid(DataGridView dgw)
         {
             dgw.Rows.Clear();
-            string queryString = $"select*from guide";
-            MySqlCommand command = new MySqlCommand(queryString,DB.getConnection());
+            string queryString = $"SELECT*from guide;";
+            MySqlCommand command = new MySqlCommand(queryString, DB.getConnection());
 
             DB.openConnection();
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                ReadSingleRow(dgw,reader);
+                ReadSingleRow(dgw, reader);
             }
             reader.Close();
 
         }
-        
-
+        //автозаполнение полей ввода при наведение на данные в таблице.
+        private void guidegrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedRow = e.RowIndex;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = guidegrid.Rows[selectedRow];
+                textBox6.Text = row.Cells[1].Value.ToString();
+                textBox5.Text = row.Cells[2].Value.ToString();
+                textBox4.Text = row.Cells[3].Value.ToString();
+            }
         }
-   
     }
+
+}
 
