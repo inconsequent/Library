@@ -30,6 +30,8 @@
         {
             back = new Button();
             panel1 = new Panel();
+            address = new Label();
+            textBox3 = new TextBox();
             label3 = new Label();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
@@ -61,6 +63,8 @@
             // panel1
             // 
             panel1.BackColor = Color.AntiqueWhite;
+            panel1.Controls.Add(address);
+            panel1.Controls.Add(textBox3);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(textBox1);
@@ -77,19 +81,36 @@
             panel1.Size = new Size(713, 599);
             panel1.TabIndex = 3;
             // 
+            // address
+            // 
+            address.AutoSize = true;
+            address.Font = new Font("SimSun", 10F, FontStyle.Bold);
+            address.Location = new Point(137, 507);
+            address.Name = "address";
+            address.Size = new Size(156, 20);
+            address.TabIndex = 55;
+            address.Text = "Возраст";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(305, 501);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(396, 31);
+            textBox3.TabIndex = 54;
+            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("SimSun", 10F, FontStyle.Bold);
-            label3.Location = new Point(3, 511);
+            label3.Location = new Point(3, 553);
             label3.Name = "label3";
             label3.Size = new Size(293, 20);
             label3.TabIndex = 53;
-            label3.Text = "Номер телефона";
+            label3.Text = "Номер карточки";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(305, 505);
+            textBox2.Location = new Point(305, 547);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(396, 31);
             textBox2.TabIndex = 52;
@@ -204,6 +225,9 @@
         private Panel panel1;
         private Panel panel2;
         private Label lable11;
+        private DataGridView readersgrid;
+        private Label address;
+        private TextBox textBox3;
         private Label label3;
         private TextBox textBox2;
         private TextBox textBox1;
@@ -212,6 +236,5 @@
         private Button delete;
         private Label label2;
         private Label label1;
-        private DataGridView readersgrid;
     }
 }

@@ -35,15 +35,15 @@
             label1 = new Label();
             label4 = new Label();
             panel1 = new Panel();
-            save = new Button();
-            change = new Button();
-            delete = new Button();
             textBox6 = new TextBox();
             label7 = new Label();
             textBox5 = new TextBox();
             label6 = new Label();
             textBox4 = new TextBox();
             label5 = new Label();
+            save = new Button();
+            change = new Button();
+            delete = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guidegrid).BeginInit();
             panel1.SuspendLayout();
@@ -91,6 +91,7 @@
             guidegrid.RowHeadersWidth = 62;
             guidegrid.Size = new Size(521, 311);
             guidegrid.TabIndex = 3;
+            guidegrid.CellClick += guidegrid_CellClick;
             guidegrid.CellContentClick += guidegrid_CellContentClick;
             // 
             // label1
@@ -136,33 +137,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(713, 633);
             panel1.TabIndex = 1;
-            // 
-            // save
-            // 
-            save.Location = new Point(549, 270);
-            save.Name = "save";
-            save.Size = new Size(151, 45);
-            save.TabIndex = 10;
-            save.Text = "Сохранить";
-            save.UseVisualStyleBackColor = true;
-            // 
-            // change
-            // 
-            change.Location = new Point(549, 189);
-            change.Name = "change";
-            change.Size = new Size(151, 45);
-            change.TabIndex = 9;
-            change.Text = "Изменить";
-            change.UseVisualStyleBackColor = true;
-            // 
-            // delete
-            // 
-            delete.Location = new Point(549, 113);
-            delete.Name = "delete";
-            delete.Size = new Size(151, 45);
-            delete.TabIndex = 8;
-            delete.Text = "Удалить";
-            delete.UseVisualStyleBackColor = true;
             // 
             // textBox6
             // 
@@ -215,6 +189,33 @@
             label5.TabIndex = 62;
             label5.Text = "Жанр";
             // 
+            // save
+            // 
+            save.Location = new Point(549, 270);
+            save.Name = "save";
+            save.Size = new Size(151, 45);
+            save.TabIndex = 10;
+            save.Text = "Сохранить";
+            save.UseVisualStyleBackColor = true;
+            // 
+            // change
+            // 
+            change.Location = new Point(549, 189);
+            change.Name = "change";
+            change.Size = new Size(151, 45);
+            change.TabIndex = 9;
+            change.Text = "Изменить";
+            change.UseVisualStyleBackColor = true;
+            // 
+            // delete
+            // 
+            delete.Location = new Point(549, 113);
+            delete.Name = "delete";
+            delete.Size = new Size(151, 45);
+            delete.TabIndex = 8;
+            delete.Text = "Удалить";
+            delete.UseVisualStyleBackColor = true;
+            // 
             // Guide
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -237,7 +238,6 @@
         private Panel panel2;
         private Label lable11;
         private Button back;
-        private DataGridView guidegrid;
         private Label label1;
         private Label label4;
         private Panel panel1;
@@ -250,5 +250,6 @@
         private Label label6;
         private TextBox textBox4;
         private Label label5;
+        private DataGridView guidegrid;
     }
 }

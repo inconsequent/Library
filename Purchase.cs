@@ -74,5 +74,20 @@ namespace Library
             reader.Close();
 
         }
+        private void save_Click(object sender, EventArgs e)
+        {
+            DB.openConnection();
+
+            var name = textBox6.Text;
+            var author = textBox5;
+            var genre = textBox4;
+            var provName = textBox1;
+            var cost = textBox2;
+            var data = textBox3;
+
+            var addQuery = $"insert into library2 (name)";
+
+        }
+
     }
 }

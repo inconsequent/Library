@@ -44,6 +44,8 @@
             cardsgrid = new DataGridView();
             panel2 = new Panel();
             lable11 = new Label();
+            textBox4 = new TextBox();
+            label5 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cardsgrid).BeginInit();
             panel2.SuspendLayout();
@@ -64,6 +66,8 @@
             // panel1
             // 
             panel1.BackColor = Color.AntiqueWhite;
+            panel1.Controls.Add(textBox4);
+            panel1.Controls.Add(label5);
             panel1.Controls.Add(notRelevant);
             panel1.Controls.Add(textBox3);
             panel1.Controls.Add(label4);
@@ -94,7 +98,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(296, 552);
+            textBox3.Location = new Point(296, 562);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(404, 31);
             textBox3.TabIndex = 33;
@@ -103,7 +107,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("SimSun", 10F, FontStyle.Bold);
-            label4.Location = new Point(66, 551);
+            label4.Location = new Point(66, 561);
             label4.Name = "label4";
             label4.Size = new Size(230, 20);
             label4.TabIndex = 32;
@@ -113,22 +117,22 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("SimSun", 10F, FontStyle.Bold);
-            label3.Location = new Point(3, 506);
+            label3.Location = new Point(66, 531);
             label3.Name = "label3";
-            label3.Size = new Size(293, 20);
+            label3.Size = new Size(230, 20);
             label3.TabIndex = 31;
-            label3.Text = "Номер телефона";
+            label3.Text = "Номер книги";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(296, 500);
+            textBox2.Location = new Point(296, 525);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(404, 31);
             textBox2.TabIndex = 30;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(296, 456);
+            textBox1.Location = new Point(296, 488);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(404, 31);
             textBox1.TabIndex = 29;
@@ -164,11 +168,11 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("SimSun", 10F, FontStyle.Bold);
-            label2.Location = new Point(191, 462);
+            label2.Location = new Point(0, 494);
             label2.Name = "label2";
-            label2.Size = new Size(105, 20);
+            label2.Size = new Size(293, 20);
             label2.TabIndex = 25;
-            label2.Text = "Ф.И.О.";
+            label2.Text = "Название книги";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -212,6 +216,24 @@
             lable11.Text = "Карточки";
             lable11.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(296, 451);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(404, 31);
+            textBox4.TabIndex = 36;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("SimSun", 10F, FontStyle.Bold);
+            label5.Location = new Point(188, 457);
+            label5.Name = "label5";
+            label5.Size = new Size(105, 20);
+            label5.TabIndex = 35;
+            label5.Text = "Ф.И.О.";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Cards
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -248,5 +270,7 @@
         private DataGridView cardsgrid;
         private TextBox textBox3;
         private Button notRelevant;
+        private TextBox textBox4;
+        private Label label5;
     }
 }

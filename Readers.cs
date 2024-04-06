@@ -35,7 +35,8 @@ namespace Library
         private void CreateColumns()
             {
                 readersgrid.Columns.Add("readerId", "№");
-                readersgrid.Columns.Add("name", "Имя");
+                readersgrid.Columns.Add("readersName", "Имя");
+                readersgrid.Columns.Add("age", "Возраст");
                 readersgrid.Columns.Add("number", "Номер карточки");
                 readersgrid.Columns.Add("IsNew", string.Empty);
             }
