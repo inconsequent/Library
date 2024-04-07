@@ -48,6 +48,9 @@ namespace Library
         {
 
             purcgrid.Columns.Add(" provId", "№");
+            purcgrid.Columns.Add("name", "Название");
+            purcgrid.Columns.Add("author", "Автор");
+            purcgrid.Columns.Add("genre", "Жанр");
             purcgrid.Columns.Add("provName", "Поставщик");
             purcgrid.Columns.Add("bookId", "№ Книги");
             purcgrid.Columns.Add("cost", "Цена");
@@ -56,7 +59,7 @@ namespace Library
         }
         private void ReadSingleRow(DataGridView dgw, IDataRecord record)
         {
-            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetInt32(3), record.GetData(4), RowState.ModifiedNew);
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetString(3), record.GetString(4), record.GetInt32(5), record.GetData(6), RowState.ModifiedNew);
         }
 
         private void RefreshDataGrid(DataGridView dgw)

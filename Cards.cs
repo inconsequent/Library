@@ -34,12 +34,14 @@ namespace Library
             RefreshDataGrid(cardsgrid);
         }
         private void CreateColumns()
-        {
+        {   
+            
             cardsgrid.Columns.Add("readerId", "№");
             cardsgrid.Columns.Add("readersName", "Ф.И.О.");
-            cardsgrid.Columns.Add("Name", "Название");
+            cardsgrid.Columns.Add("name", "Название");
             cardsgrid.Columns.Add("bookId", "№ Книги"); 
             cardsgrid.Columns.Add("data", "Дата выдачи");
+            
             cardsgrid.Columns.Add("IsNew", string.Empty);
 
         }
@@ -51,8 +53,9 @@ namespace Library
         private void RefreshDataGrid(DataGridView dgw)
         {
             dgw.Rows.Clear();
-           дописать запрос вывода таблиц из бд.
- string queryString = $"select ";
+           //дописать запрос вывода таблиц из бд.
+
+            string queryString = $"select*from cards";
             MySqlCommand command = new MySqlCommand(queryString, DB.getConnection());
 
             DB.openConnection();

@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Net;
 
 namespace Library
 {
@@ -49,7 +50,7 @@ namespace Library
 
         }
 
-       
+
         // подклюсение и вывод бд
         private void CreateColumns()
         {
@@ -91,7 +92,38 @@ namespace Library
                 textBox4.Text = row.Cells[3].Value.ToString();
             }
         }
+        // сохранение данных(добавление)
+        private void save_Click(object sender, EventArgs e)
+        {
+            DB.openConnection();
+
+            var name = textBox6.Text;
+            var author = textBox5.Text;
+            var genre = textBox4.Text;
+            //int price; if(int.TryParce(местоположение, out название переменной))
+            var addQuery = $"insert into guide(genre,author,name) values('{genre}','{author}','{name}')";
+            var command = new MySqlCommand(addQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+
+            DB.closeConnection();
+        }
+
+        private void change_Click(object sender, EventArgs e)
+        {
+
+            DB.openConnection();
+
+            var name = textBox6.Text;
+            var author = textBox5.Text;
+            var genre = textBox4.Text;
+            //int price; if(int.TryParce(местоположение, out название переменной))
+            var addQuery = $"insert into guide(genre,author,name) values('{genre}','{author}','{name}')";
+            var command = new MySqlCommand(addQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+
+            DB.closeConnection();
+        }
     }
 
-}
+}           
 

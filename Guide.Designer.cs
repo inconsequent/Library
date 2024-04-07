@@ -197,6 +197,7 @@
             save.TabIndex = 10;
             save.Text = "Сохранить";
             save.UseVisualStyleBackColor = true;
+            save.Click += save_Click;
             // 
             // change
             // 
@@ -206,6 +207,7 @@
             change.TabIndex = 9;
             change.Text = "Изменить";
             change.UseVisualStyleBackColor = true;
+            change.Click += change_Click;
             // 
             // delete
             // 
