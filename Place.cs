@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Library
 {
@@ -45,7 +46,7 @@ namespace Library
         }
         private void ReadSingleRow(DataGridView dgw, IDataRecord record)
         {
-            //dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetInt32(2), record.GetInt32(3), RowState.ModifiedNew);
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetInt32(3), RowState.ModifiedNew);
         }
 
         private void RefreshDataGrid(DataGridView dgw)
@@ -62,6 +63,20 @@ namespace Library
             }
             reader.Close();
 
+        }
+
+        private void placesgrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedRow = e.RowIndex;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = placesgrid.Rows[selectedRow];
+                textBox1.Text = row.Cells[1].Value.ToString();
+                textBox2.Text = row.Cells[2].Value.ToString();
+                textBox3.Text = row.Cells[3].Value.ToString();
+                
+
+            }
         }
     }
 }

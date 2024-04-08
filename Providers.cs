@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Library
 {
@@ -30,8 +31,8 @@ namespace Library
 
         private void Providers_Load(object sender, EventArgs e)
         {
-           CreateColumns(); 
-           RefreshDataGrid(providersgrid);
+            CreateColumns();
+            RefreshDataGrid(providersgrid);
         }
 
         private void CreateColumns()
@@ -61,6 +62,18 @@ namespace Library
             }
             reader.Close();
 
+        }
+
+        private void providersgrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedRow = e.RowIndex;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = providersgrid.Rows[selectedRow];
+                textBox1.Text = row.Cells[1].Value.ToString();
+                textBox2.Text = row.Cells[2].Value.ToString();
+                
+            }
         }
     }
 }

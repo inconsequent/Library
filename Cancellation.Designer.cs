@@ -30,6 +30,7 @@
         {
             back = new Button();
             panel1 = new Panel();
+            label3 = new Label();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             save = new Button();
@@ -40,7 +41,6 @@
             cancelegrid = new DataGridView();
             panel2 = new Panel();
             lable11 = new Label();
-            label3 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cancelegrid).BeginInit();
             panel2.SuspendLayout();
@@ -76,6 +76,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(713, 599);
             panel1.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("SimSun", 12F, FontStyle.Bold);
+            label3.Location = new Point(40, 518);
+            label3.Name = "label3";
+            label3.Size = new Size(185, 24);
+            label3.TabIndex = 22;
+            label3.Text = "Причина";
             // 
             // textBox2
             // 
@@ -148,6 +158,7 @@
             cancelegrid.RowHeadersWidth = 62;
             cancelegrid.Size = new Size(521, 311);
             cancelegrid.TabIndex = 13;
+            cancelegrid.CellClick += cancelegrid_CellClick;
             // 
             // panel2
             // 
@@ -169,16 +180,6 @@
             lable11.TabIndex = 0;
             lable11.Text = "Списание";
             lable11.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("SimSun", 12F, FontStyle.Bold);
-            label3.Location = new Point(40, 518);
-            label3.Name = "label3";
-            label3.Size = new Size(185, 24);
-            label3.TabIndex = 22;
-            label3.Text = "Причина";
             // 
             // Cancellation
             // 

@@ -179,6 +179,7 @@
             readersgrid.RowHeadersWidth = 62;
             readersgrid.Size = new Size(521, 311);
             readersgrid.TabIndex = 45;
+            readersgrid.CellClick += readersgrid_CellClick;
             // 
             // panel2
             // 

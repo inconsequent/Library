@@ -30,6 +30,8 @@
         {
             back = new Button();
             panel1 = new Panel();
+            textBox4 = new TextBox();
+            label5 = new Label();
             notRelevant = new Button();
             textBox3 = new TextBox();
             label4 = new Label();
@@ -44,8 +46,6 @@
             cardsgrid = new DataGridView();
             panel2 = new Panel();
             lable11 = new Label();
-            textBox4 = new TextBox();
-            label5 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cardsgrid).BeginInit();
             panel2.SuspendLayout();
@@ -86,6 +86,24 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(713, 599);
             panel1.TabIndex = 2;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(296, 451);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(404, 31);
+            textBox4.TabIndex = 36;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("SimSun", 10F, FontStyle.Bold);
+            label5.Location = new Point(188, 457);
+            label5.Name = "label5";
+            label5.Size = new Size(105, 20);
+            label5.TabIndex = 35;
+            label5.Text = "Ф.И.О.";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // notRelevant
             // 
@@ -194,6 +212,7 @@
             cardsgrid.RowHeadersWidth = 62;
             cardsgrid.Size = new Size(521, 311);
             cardsgrid.TabIndex = 23;
+            cardsgrid.CellClick += cardsgrid_CellClick;
             // 
             // panel2
             // 
@@ -215,24 +234,6 @@
             lable11.TabIndex = 0;
             lable11.Text = "Карточки";
             lable11.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(296, 451);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(404, 31);
-            textBox4.TabIndex = 36;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("SimSun", 10F, FontStyle.Bold);
-            label5.Location = new Point(188, 457);
-            label5.Name = "label5";
-            label5.Size = new Size(105, 20);
-            label5.TabIndex = 35;
-            label5.Text = "Ф.И.О.";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Cards
             // 

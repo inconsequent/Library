@@ -106,6 +106,7 @@
             providersgrid.RowHeadersWidth = 62;
             providersgrid.Size = new Size(521, 311);
             providersgrid.TabIndex = 45;
+            providersgrid.CellClick += providersgrid_CellClick;
             // 
             // label3
             // 

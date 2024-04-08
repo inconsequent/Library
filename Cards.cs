@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Text;
 
 namespace Library
 {
@@ -34,26 +36,26 @@ namespace Library
             RefreshDataGrid(cardsgrid);
         }
         private void CreateColumns()
-        {   
-            
+        {
+
             cardsgrid.Columns.Add("readerId", "№");
             cardsgrid.Columns.Add("readersName", "Ф.И.О.");
             cardsgrid.Columns.Add("name", "Название");
-            cardsgrid.Columns.Add("bookId", "№ Книги"); 
+            cardsgrid.Columns.Add("bookId", "№ Книги");
             cardsgrid.Columns.Add("data", "Дата выдачи");
-            
+
             cardsgrid.Columns.Add("IsNew", string.Empty);
 
         }
         private void ReadSingleRow(DataGridView dgw, IDataRecord record)
         {
-            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetData(3), RowState.ModifiedNew);
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetInt32(3), record.GetString(4), RowState.ModifiedNew);
         }
 
         private void RefreshDataGrid(DataGridView dgw)
         {
             dgw.Rows.Clear();
-           //дописать запрос вывода таблиц из бд.
+            //дописать запрос вывода таблиц из бд.
 
             string queryString = $"select*from cards";
             MySqlCommand command = new MySqlCommand(queryString, DB.getConnection());
@@ -66,6 +68,19 @@ namespace Library
             }
             reader.Close();
 
+        }
+
+        private void cardsgrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedRow = e.RowIndex;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = cardsgrid.Rows[selectedRow];
+                textBox4.Text = row.Cells[1].Value.ToString();
+                textBox1.Text = row.Cells[2].Value.ToString();
+                textBox2.Text = row.Cells[3].Value.ToString();
+                textBox3.Text = row.Cells[4].Value.ToString();
+            }
         }
     }
 }

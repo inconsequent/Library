@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Library
 {
@@ -19,7 +20,7 @@ namespace Library
         public Cancellation()
         {
             InitializeComponent();
-            RefreshDataGrid(cancelegrid);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,7 +34,7 @@ namespace Library
         private void Cancellation_Load(object sender, EventArgs e)
         {
             CreateColumns();
-
+            RefreshDataGrid(cancelegrid);
         }
 
         private void cancelegrid_Click(object sender, EventArgs e)
@@ -42,10 +43,10 @@ namespace Library
         }
         private void CreateColumns()
         {
-           cancelegrid.Columns.Add("bookId", "№");
-           cancelegrid.Columns.Add("name","Название" );
-           cancelegrid.Columns.Add("reason", "Причина");
-           cancelegrid.Columns.Add("IsNew", string.Empty);
+            cancelegrid.Columns.Add("cancId", "№");
+            cancelegrid.Columns.Add("name", "Название");
+            cancelegrid.Columns.Add("reason", "Причина");
+            cancelegrid.Columns.Add("IsNew", string.Empty);
 
         }
         private void ReadSingleRow(DataGridView dgw, IDataRecord record)
@@ -69,7 +70,37 @@ namespace Library
 
         }
 
+        //автозаполнение полей ввода при наведение на данные в таблице.
+         private void cancelegrid_CellClick(object sender, DataGridViewCellEventArgs e)
+                {
+                    selectedRow = e.RowIndex;
+                    if (e.RowIndex >= 0)
+                    {
+                        DataGridViewRow row = cancelegrid.Rows[selectedRow];
+                        textBox1.Text = row.Cells[1].Value.ToString();
+                        textBox2.Text = row.Cells[2].Value.ToString();
 
+                    }
+                }
 
+        // сохранение данных(добавление)
+        private void save_Click(object sender, EventArgs e)
+        {
+            DB.openConnection();
+
+            var name = textBox1.Text;
+            var reason = textBox2.Text;
+
+            //int price; if(int.TryParce(местоположение, out название переменной))
+            var addQuery = $"insert into cancellation(name,reason) values('{name}','{reason}')";
+            var command = new MySqlCommand(addQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+
+            DB.closeConnection();
+            //не добавляются видимо из за отсутствия id, хотя хй знает
+
+        }
+
+       
     }
 }

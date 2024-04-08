@@ -179,6 +179,7 @@
             placesgrid.RowHeadersWidth = 62;
             placesgrid.Size = new Size(521, 311);
             placesgrid.TabIndex = 34;
+            placesgrid.CellClick += placesgrid_CellClick;
             // 
             // panel2
             // 

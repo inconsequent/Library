@@ -111,17 +111,17 @@ namespace Library
         private void change_Click(object sender, EventArgs e)
         {
 
-            DB.openConnection();
-
-            var name = textBox6.Text;
-            var author = textBox5.Text;
-            var genre = textBox4.Text;
-            //int price; if(int.TryParce(местоположение, out название переменной))
-            var addQuery = $"insert into guide(genre,author,name) values('{genre}','{author}','{name}')";
-            var command = new MySqlCommand(addQuery, DB.getConnection());
-            command.ExecuteNonQuery();
-
-            DB.closeConnection();
+          // DB.openConnection();
+          //
+          // var name = textBox6.Text;
+          // var author = textBox5.Text;
+          // var genre = textBox4.Text;
+          // //int price; if(int.TryParce(местоположение, out название переменной))
+          // var addQuery = $"insert into guide(genre,author,name) values('{genre}','{author}','{name}')";
+          // var command = new MySqlCommand(addQuery, DB.getConnection());
+          // command.ExecuteNonQuery();
+          //
+          // DB.closeConnection();
         }
     }
 

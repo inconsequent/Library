@@ -190,6 +190,7 @@
             purcgrid.RowHeadersWidth = 62;
             purcgrid.Size = new Size(531, 223);
             purcgrid.TabIndex = 45;
+            purcgrid.CellClick += purcgrid_CellClick;
             // 
             // label3
             // 
