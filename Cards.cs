@@ -82,5 +82,21 @@ namespace Library
                 textBox3.Text = row.Cells[4].Value.ToString();
             }
         }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            DB.openConnection();
+            var readersName=textBox4.Text;
+            var name = textBox1.Text;
+            var bookId = textBox2.Text;
+            var data = textBox3.Text;
+            //int price; if(int.TryParce(местоположение, out название переменной))
+            var addQuery = $"insert into cards(readersName,name,bookId,data) values('{readersName}','{name}','{bookId}','{data}')";
+            var command = new MySqlCommand(addQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+
+            DB.closeConnection();
+            // id прибавляется некорректно.
+        }
     }
 }
