@@ -71,17 +71,17 @@ namespace Library
         }
 
         //автозаполнение полей ввода при наведение на данные в таблице.
-         private void cancelegrid_CellClick(object sender, DataGridViewCellEventArgs e)
-                {
-                    selectedRow = e.RowIndex;
-                    if (e.RowIndex >= 0)
-                    {
-                        DataGridViewRow row = cancelegrid.Rows[selectedRow];
-                        textBox1.Text = row.Cells[1].Value.ToString();
-                        textBox2.Text = row.Cells[2].Value.ToString();
+        private void cancelegrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedRow = e.RowIndex;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = cancelegrid.Rows[selectedRow];
+                textBox1.Text = row.Cells[1].Value.ToString();
+                textBox2.Text = row.Cells[2].Value.ToString();
 
-                    }
-                }
+            }
+        }
 
         // сохранение данных(добавление)
         private void save_Click(object sender, EventArgs e)
@@ -97,10 +97,8 @@ namespace Library
             command.ExecuteNonQuery();
 
             DB.closeConnection();
-            //не добавляются видимо из за отсутствия id, хотя хй знает
+            //проблема с числом в id при добавлении оно не сбрасывается при удалении,решить
 
         }
-
-       
     }
 }
