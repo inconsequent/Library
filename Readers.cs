@@ -72,5 +72,10 @@ namespace Library
                 textBox2.Text = row.Cells[3].Value.ToString();
             }
         }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            RefreshDataGrid(readersgrid);
+        }
     }
 }

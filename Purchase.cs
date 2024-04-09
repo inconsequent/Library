@@ -78,17 +78,17 @@ namespace Library
         }
         private void save_Click(object sender, EventArgs e)
         {
-          // DB.openConnection();
-          //
-          // var name = textBox6.Text;
-          // var author = textBox5;
-          // var genre = textBox4;
-          // var provName = textBox1;
-          // var cost = textBox2;
-          // var data = textBox3;
-          //
-          // var addQuery = $"insert into library2 (name)";
-       
+            // DB.openConnection();
+            //
+            // var name = textBox6.Text;
+            // var author = textBox5;
+            // var genre = textBox4;
+            // var provName = textBox1;
+            // var cost = textBox2;
+            // var data = textBox3;
+            //
+            // var addQuery = $"insert into library2 (name)";
+
         }
 
         private void purcgrid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -104,6 +104,11 @@ namespace Library
                 textBox2.Text = row.Cells[5].Value.ToString();
                 textBox3.Text = row.Cells[6].Value.ToString();
             }
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            RefreshDataGrid(purcgrid);
         }
     }
 }

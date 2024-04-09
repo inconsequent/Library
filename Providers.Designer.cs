@@ -41,6 +41,7 @@
             delete = new Button();
             save = new Button();
             change = new Button();
+            update = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)providersgrid).BeginInit();
@@ -80,6 +81,7 @@
             // panel2
             // 
             panel2.BackColor = Color.NavajoWhite;
+            panel2.Controls.Add(update);
             panel2.Controls.Add(lable11);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
@@ -181,6 +183,16 @@
             change.Text = "Изменить";
             change.UseVisualStyleBackColor = true;
             // 
+            // update
+            // 
+            update.Location = new Point(593, 30);
+            update.Name = "update";
+            update.Size = new Size(107, 43);
+            update.TabIndex = 24;
+            update.Text = "Обновить";
+            update.UseVisualStyleBackColor = true;
+            update.Click += update_Click;
+            // 
             // Providers
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -214,5 +226,6 @@
         private Button delete;
         private Button save;
         private Button change;
+        private Button update;
     }
 }

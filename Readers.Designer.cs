@@ -43,6 +43,7 @@
             readersgrid = new DataGridView();
             panel2 = new Panel();
             lable11 = new Label();
+            update = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)readersgrid).BeginInit();
             panel2.SuspendLayout();
@@ -184,6 +185,7 @@
             // panel2
             // 
             panel2.BackColor = Color.NavajoWhite;
+            panel2.Controls.Add(update);
             panel2.Controls.Add(lable11);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
@@ -201,6 +203,16 @@
             lable11.TabIndex = 0;
             lable11.Text = "Читатели";
             lable11.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // update
+            // 
+            update.Location = new Point(593, 30);
+            update.Name = "update";
+            update.Size = new Size(107, 43);
+            update.TabIndex = 24;
+            update.Text = "Обновить";
+            update.UseVisualStyleBackColor = true;
+            update.Click += update_Click;
             // 
             // Readers
             // 
@@ -237,5 +249,6 @@
         private Button delete;
         private Label label2;
         private Label label1;
+        private Button update;
     }
 }

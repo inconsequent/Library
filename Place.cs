@@ -74,9 +74,14 @@ namespace Library
                 textBox1.Text = row.Cells[1].Value.ToString();
                 textBox2.Text = row.Cells[2].Value.ToString();
                 textBox3.Text = row.Cells[3].Value.ToString();
-                
+
 
             }
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            RefreshDataGrid(placesgrid);
         }
     }
 }

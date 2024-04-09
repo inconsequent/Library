@@ -100,5 +100,10 @@ namespace Library
             //проблема с числом в id при добавлении оно не сбрасывается при удалении,решить
 
         }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            RefreshDataGrid(cancelegrid);
+        }
     }
 }

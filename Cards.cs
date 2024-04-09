@@ -86,7 +86,7 @@ namespace Library
         private void save_Click(object sender, EventArgs e)
         {
             DB.openConnection();
-            var readersName=textBox4.Text;
+            var readersName = textBox4.Text;
             var name = textBox1.Text;
             var bookId = textBox2.Text;
             var data = textBox3.Text;
@@ -97,6 +97,11 @@ namespace Library
 
             DB.closeConnection();
             // id прибавляется некорректно.
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            RefreshDataGrid(cardsgrid);
         }
     }
 }

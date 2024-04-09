@@ -49,6 +49,7 @@
             delete = new Button();
             save = new Button();
             change = new Button();
+            update = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)purcgrid).BeginInit();
@@ -154,6 +155,7 @@
             // panel2
             // 
             panel2.BackColor = Color.NavajoWhite;
+            panel2.Controls.Add(update);
             panel2.Controls.Add(lable11);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
@@ -266,6 +268,16 @@
             change.Text = "Изменить";
             change.UseVisualStyleBackColor = true;
             // 
+            // update
+            // 
+            update.Location = new Point(593, 33);
+            update.Name = "update";
+            update.Size = new Size(107, 43);
+            update.TabIndex = 24;
+            update.Text = "Обновить";
+            update.UseVisualStyleBackColor = true;
+            update.Click += update_Click;
+            // 
             // Purchase
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -307,5 +319,6 @@
         private Label label6;
         private TextBox textBox4;
         private Label label5;
+        private Button update;
     }
 }

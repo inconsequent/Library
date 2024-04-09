@@ -41,6 +41,7 @@
             cancelegrid = new DataGridView();
             panel2 = new Panel();
             lable11 = new Label();
+            update = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cancelegrid).BeginInit();
             panel2.SuspendLayout();
@@ -109,6 +110,7 @@
             save.TabIndex = 19;
             save.Text = "Сохранить";
             save.UseVisualStyleBackColor = true;
+            save.Click += save_Click;
             // 
             // change
             // 
@@ -163,6 +165,7 @@
             // panel2
             // 
             panel2.BackColor = Color.NavajoWhite;
+            panel2.Controls.Add(update);
             panel2.Controls.Add(lable11);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
@@ -180,6 +183,16 @@
             lable11.TabIndex = 0;
             lable11.Text = "Списание";
             lable11.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // update
+            // 
+            update.Location = new Point(574, 28);
+            update.Name = "update";
+            update.Size = new Size(107, 43);
+            update.TabIndex = 23;
+            update.Text = "Обновить";
+            update.UseVisualStyleBackColor = true;
+            update.Click += update_Click;
             // 
             // Cancellation
             // 
@@ -214,5 +227,6 @@
         private Label label1;
         private DataGridView cancelegrid;
         private Label label3;
+        private Button update;
     }
 }

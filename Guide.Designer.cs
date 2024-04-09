@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            update = new Button();
             lable11 = new Label();
             back = new Button();
             guidegrid = new DataGridView();
@@ -44,6 +45,7 @@
             save = new Button();
             change = new Button();
             delete = new Button();
+            saveChange = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guidegrid).BeginInit();
             panel1.SuspendLayout();
@@ -52,12 +54,23 @@
             // panel2
             // 
             panel2.BackColor = Color.NavajoWhite;
+            panel2.Controls.Add(update);
             panel2.Controls.Add(lable11);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(713, 100);
             panel2.TabIndex = 2;
+            // 
+            // update
+            // 
+            update.Location = new Point(593, 30);
+            update.Name = "update";
+            update.Size = new Size(107, 43);
+            update.TabIndex = 24;
+            update.Text = "Обновить";
+            update.UseVisualStyleBackColor = true;
+            update.Click += update_Click;
             // 
             // lable11
             // 
@@ -118,6 +131,7 @@
             // panel1
             // 
             panel1.BackColor = Color.AntiqueWhite;
+            panel1.Controls.Add(saveChange);
             panel1.Controls.Add(textBox6);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(textBox5);
@@ -195,7 +209,7 @@
             save.Name = "save";
             save.Size = new Size(151, 45);
             save.TabIndex = 10;
-            save.Text = "Сохранить";
+            save.Text = "Добавить";
             save.UseVisualStyleBackColor = true;
             save.Click += save_Click;
             // 
@@ -217,6 +231,17 @@
             delete.TabIndex = 8;
             delete.Text = "Удалить";
             delete.UseVisualStyleBackColor = true;
+            delete.Click += delete_Click;
+            // 
+            // saveChange
+            // 
+            saveChange.Location = new Point(550, 337);
+            saveChange.Name = "saveChange";
+            saveChange.Size = new Size(151, 45);
+            saveChange.TabIndex = 68;
+            saveChange.Text = "Сохранить";
+            saveChange.UseVisualStyleBackColor = true;
+            saveChange.Click += saveChange_Click;
             // 
             // Guide
             // 
@@ -253,5 +278,7 @@
         private TextBox textBox4;
         private Label label5;
         private DataGridView guidegrid;
+        private Button update;
+        private Button saveChange;
     }
 }

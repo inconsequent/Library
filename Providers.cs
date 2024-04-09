@@ -72,8 +72,13 @@ namespace Library
                 DataGridViewRow row = providersgrid.Rows[selectedRow];
                 textBox1.Text = row.Cells[1].Value.ToString();
                 textBox2.Text = row.Cells[2].Value.ToString();
-                
+
             }
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            RefreshDataGrid(providersgrid);
         }
     }
 }
