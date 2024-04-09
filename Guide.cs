@@ -111,17 +111,71 @@ namespace Library
         private void change_Click(object sender, EventArgs e)
         {
 
-          // DB.openConnection();
-          //
-          // var name = textBox6.Text;
-          // var author = textBox5.Text;
-          // var genre = textBox4.Text;
-          // //int price; if(int.TryParce(местоположение, out название переменной))
-          // var addQuery = $"insert into guide(genre,author,name) values('{genre}','{author}','{name}')";
-          // var command = new MySqlCommand(addQuery, DB.getConnection());
-          // command.ExecuteNonQuery();
-          //
-          // DB.closeConnection();
+            // DB.openConnection();
+            //
+            // var name = textBox6.Text;
+            // var author = textBox5.Text;
+            // var genre = textBox4.Text;
+            // //int price; if(int.TryParce(местоположение, out название переменной))
+            // var addQuery = $"insert into guide(genre,author,name) values('{genre}','{author}','{name}')";
+            // var command = new MySqlCommand(addQuery, DB.getConnection());
+            // command.ExecuteNonQuery();
+            //
+            // DB.closeConnection();
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            RefreshDataGrid(guidegrid);
+        }
+        //удаление данных
+
+        private void Update()// не работает
+        {
+            DB.openConnection();
+            for (int index = 0; index < guidegrid.Rows.Count; index++)
+            {
+                var rowState = (RowState)guidegrid.Rows[index].Cells[3].Value;
+                if (rowState == RowState.Existed)
+                    continue;
+                if (rowState == RowState.Deleted)
+                {
+                    var id = Convert.ToInt32(guidegrid.Rows[index].Cells[0].Value);
+                    var deleteQuery = $"delete from guide where BookId = {id}";
+                    var command = new MySqlCommand(deleteQuery, DB.getConnection());
+                    command.ExecuteNonQuery();
+
+                }
+            }
+
+            DB.closeConnection();
+        }
+
+        private void deleteRow()
+        {
+            int index = guidegrid.CurrentCell.RowIndex;
+            guidegrid.Rows[index].Visible = false;
+
+
+           // guidegrid.Rows[index].Visible = false;
+           // guidegrid.Rows[index].Cells[4].Value = RowState.Deleted;
+             if (guidegrid.Rows[index].Cells[0].Value.ToString() == string.Empty)
+             {
+                 guidegrid.Rows[index].Cells[3].Value = RowState.Deleted;
+                 return;
+             }
+            guidegrid.Rows[index].Cells[3].Value = RowState.Deleted; 
+               
+        }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            deleteRow();
+        }
+
+        private void saveChange_Click(object sender, EventArgs e)
+        {
+            Update();
         }
     }
 
