@@ -47,14 +47,14 @@ namespace Library
         private void CreateColumns()
         {
 
-            purcgrid.Columns.Add(" purcId", "№");
+            purcgrid.Columns.Add("purcId", "№");
             purcgrid.Columns.Add("name", "Название");
             purcgrid.Columns.Add("author", "Автор");
             purcgrid.Columns.Add("genre", "Жанр");
             purcgrid.Columns.Add("provName", "Поставщик");
             purcgrid.Columns.Add("cost", "Цена");
             purcgrid.Columns.Add("datePurchase", "Дата закупки");
-            purcgrid.Columns.Add("IsNew", string.Empty);
+
         }
         private void ReadSingleRow(DataGridView dgw, IDataRecord record)
         {
@@ -76,20 +76,7 @@ namespace Library
             reader.Close();
 
         }
-        private void save_Click(object sender, EventArgs e)
-        {
-            // DB.openConnection();
-            //
-            // var name = textBox6.Text;
-            // var author = textBox5;
-            // var genre = textBox4;
-            // var provName = textBox1;
-            // var cost = textBox2;
-            // var data = textBox3;
-            //
-            // var addQuery = $"insert into library2 (name)";
 
-        }
 
         private void purcgrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -106,9 +93,61 @@ namespace Library
             }
         }
 
+        // сохранение данных(добавление)
+        private void save_Click(object sender, EventArgs e)
+        {
+            DB.openConnection();
+
+            var name = textBox6.Text;
+            var author = textBox5.Text;
+            var genre = textBox4.Text;
+            var provName = textBox1.Text;
+            var cost = textBox2.Text;
+            var datePurchase = textBox3.Text;
+            //int price; if(int.TryParce(местоположение, out название переменной))
+            var addQuery = $"insert into purchase(name,author,genre,provName,cost,datePurchase) values('{name}','{author}','{genre}','{provName}','{cost}','{datePurchase}')";
+            var command = new MySqlCommand(addQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+
+            DB.closeConnection();
+        }
+
+        //Обновление данных
+
         private void update_Click(object sender, EventArgs e)
         {
             RefreshDataGrid(purcgrid);
+        }
+
+        // Изменение данных                                                           
+        private void change_Click(object sender, EventArgs e)
+        {
+
+            DB.openConnection();
+            var index = purcgrid.CurrentCell.RowIndex;
+            var id = Convert.ToInt32(purcgrid.Rows[index].Cells[0].Value);
+            var deleteQuery = $" UPDATE `purchase` SET `name` = '{textBox6.Text}', `author` = '{textBox5.Text}', `genre` = '{textBox4.Text}', `provName` = '{textBox1.Text}', `cost` = '{textBox2.Text}', `datePurchase` = '{textBox3.Text}' WHERE `purchase`.`purcId` = {id};";
+            var command = new MySqlCommand(deleteQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+
+            DB.closeConnection();
+        }
+
+
+
+
+        //удаление данных
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            var index = purcgrid.CurrentCell.RowIndex;
+            var id = Convert.ToInt32(purcgrid.Rows[index].Cells[0].Value);
+            var deleteQuery = $"delete from purchase where purcId = {id}";
+            var command = new MySqlCommand(deleteQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+            DB.closeConnection();
+
+
         }
     }
 }

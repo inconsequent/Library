@@ -40,7 +40,7 @@ namespace Library
             providersgrid.Columns.Add("provId", "№");
             providersgrid.Columns.Add("provName", "Название");
             providersgrid.Columns.Add("address", "Адрес");
-            providersgrid.Columns.Add("IsNew", string.Empty);
+           
 
         }
         private void ReadSingleRow(DataGridView dgw, IDataRecord record)
@@ -76,9 +76,61 @@ namespace Library
             }
         }
 
+        // сохранение данных(добавление)
+        private void save_Click(object sender, EventArgs e)
+        {
+            DB.openConnection();
+
+            var provName = textBox1.Text;
+            var address = textBox2.Text;
+            //int price; if(int.TryParce(местоположение, out название переменной))
+            var addQuery = $"insert into providers(provName,address) values('{provName}','{address}')";
+            var command = new MySqlCommand(addQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+
+            DB.closeConnection();
+        }
+
+        //Обновление данных
+
         private void update_Click(object sender, EventArgs e)
         {
             RefreshDataGrid(providersgrid);
         }
+
+        // Изменение данных
+        private void change_Click(object sender, EventArgs e)
+        {
+
+            DB.openConnection();
+            var index = providersgrid.CurrentCell.RowIndex;
+            var id = Convert.ToInt32(providersgrid.Rows[index].Cells[0].Value);
+            var deleteQuery = $" UPDATE `providers` SET `provName` = '{textBox1.Text}', `address` = '{textBox2.Text}' WHERE `providers`.`provId` = {id};";
+            var command = new MySqlCommand(deleteQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+
+            DB.closeConnection();
+        }
+
+
+
+
+        //удаление данных
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            var index = providersgrid.CurrentCell.RowIndex;
+            var id = Convert.ToInt32(providersgrid.Rows[index].Cells[0].Value);
+            var deleteQuery = $"delete from providers where provId = {id}";
+            var command = new MySqlCommand(deleteQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+            DB.closeConnection();
+
+
+        }
+
+
+
+
     }
 }

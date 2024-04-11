@@ -36,12 +36,11 @@ namespace Library
 
         private void CreateColumns()
         {
-            placesgrid.Columns.Add("bookId", "№");
+            placesgrid.Columns.Add("placeId", "№");
             placesgrid.Columns.Add("name", "Название");
             placesgrid.Columns.Add("code", "Код книги");
             placesgrid.Columns.Add("number", "Номер книги");
-            placesgrid.Columns.Add("IsNew", string.Empty);
-
+         
 
         }
         private void ReadSingleRow(DataGridView dgw, IDataRecord record)
@@ -79,9 +78,54 @@ namespace Library
             }
         }
 
+        // сохранение данных(добавление)
+        private void save_Click(object sender, EventArgs e)
+        {
+            DB.openConnection();
+
+            var name = textBox1.Text;
+            var code = textBox2.Text;
+            var number = textBox3.Text;
+            //int price; if(int.TryParce(местоположение, out название переменной))
+            var addQuery = $"insert into place(name,code,number) values('{name}','{code}','{number}')";
+            var command = new MySqlCommand(addQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+
+            DB.closeConnection();
+        }
         private void update_Click(object sender, EventArgs e)
         {
             RefreshDataGrid(placesgrid);
+        }
+
+        // Изменение данных
+        private void change_Click(object sender, EventArgs e)
+        {
+
+            DB.openConnection();
+            var index = placesgrid.CurrentCell.RowIndex;
+            var id = Convert.ToInt32(placesgrid.Rows[index].Cells[0].Value);
+            var deleteQuery = $" UPDATE `place` SET `name` = '{textBox1.Text}', `code` = '{textBox2.Text}', `number` = '{textBox3.Text}' WHERE `place`.`placeId` = {id};";
+            var command = new MySqlCommand(deleteQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+
+            DB.closeConnection();
+        }
+     
+
+
+        //удаление данных                
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            var index = placesgrid.CurrentCell.RowIndex;
+            var id = Convert.ToInt32(placesgrid.Rows[index].Cells[0].Value);
+            var deleteQuery = $"delete from place where placeId = {id}";
+            var command = new MySqlCommand(deleteQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+            DB.closeConnection();
+
+
         }
     }
 }

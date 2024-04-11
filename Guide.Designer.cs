@@ -165,17 +165,18 @@
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(textBox4);
             groupBox1.Controls.Add(label5);
-            groupBox1.Location = new Point(6, 405);
+            groupBox1.Location = new Point(6, 413);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(695, 192);
+            groupBox1.Size = new Size(674, 184);
             groupBox1.TabIndex = 69;
             groupBox1.TabStop = false;
             // 
             // textBox6
             // 
+            textBox6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox6.Location = new Point(189, 57);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(484, 31);
+            textBox6.Size = new Size(463, 31);
             textBox6.TabIndex = 67;
             // 
             // inter2
@@ -190,9 +191,10 @@
             // 
             // textBox5
             // 
+            textBox5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox5.Location = new Point(189, 94);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(484, 31);
+            textBox5.Size = new Size(463, 31);
             textBox5.TabIndex = 65;
             // 
             // label6
@@ -207,9 +209,10 @@
             // 
             // textBox4
             // 
+            textBox4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox4.Location = new Point(189, 131);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(484, 31);
+            textBox4.Size = new Size(463, 31);
             textBox4.TabIndex = 63;
             // 
             // label5

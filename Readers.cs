@@ -39,11 +39,11 @@ namespace Library
             readersgrid.Columns.Add("readersName", "Имя");
             readersgrid.Columns.Add("age", "Возраст");
             readersgrid.Columns.Add("number", "Номер карточки");
-            readersgrid.Columns.Add("IsNew", string.Empty);
+           
         }
         private void ReadSingleRow(DataGridView dgw, IDataRecord record)
         {
-            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetInt32(2), record.GetInt32(3), RowState.ModifiedNew);
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetInt32(2), record.GetInt32(3));
         }
 
         private void RefreshDataGrid(DataGridView dgw)
@@ -73,9 +73,59 @@ namespace Library
             }
         }
 
+        // сохранение данных(добавление)
+        private void save_Click(object sender, EventArgs e)
+        {
+            DB.openConnection();
+
+            var readersName = textBox1.Text;
+            var age = textBox3.Text;
+            var number = textBox2.Text;
+            //int price; if(int.TryParce(местоположение, out название переменной))
+            var addQuery = $"insert into readers(readersName,age,number) values('{readersName}','{age}','{number}')";
+            var command = new MySqlCommand(addQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+
+            DB.closeConnection();
+        }
+
+        //Обновление данных
+
         private void update_Click(object sender, EventArgs e)
         {
             RefreshDataGrid(readersgrid);
         }
+
+        // Изменение данных
+        private void change_Click(object sender, EventArgs e)
+        {
+
+            DB.openConnection();
+            var index = readersgrid.CurrentCell.RowIndex;
+            var id = Convert.ToInt32(readersgrid.Rows[index].Cells[0].Value);
+            var deleteQuery = $" UPDATE `readers` SET `readersName` = '{textBox1.Text}', `age` = '{textBox3.Text}', `number` = '{textBox2.Text}' WHERE `readers`.`readerId` = {id};";
+            var command = new MySqlCommand(deleteQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+
+            DB.closeConnection();
+        }
+
+
+
+
+        //удаление данных
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            var index = readersgrid.CurrentCell.RowIndex;
+            var id = Convert.ToInt32(readersgrid.Rows[index].Cells[0].Value);
+            var deleteQuery = $"delete from readers where readerId = {id}";
+            var command = new MySqlCommand(deleteQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+            DB.closeConnection();
+
+
+        }
+
     }
 }

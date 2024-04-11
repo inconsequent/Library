@@ -45,8 +45,6 @@ namespace Library
             cardsgrid.Columns.Add("code", "Код Книги");
             cardsgrid.Columns.Add("data", "Дата выдачи");
 
-            cardsgrid.Columns.Add("IsNew", string.Empty);
-
         }
         private void ReadSingleRow(DataGridView dgw, IDataRecord record)
         {

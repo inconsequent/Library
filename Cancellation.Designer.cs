@@ -199,6 +199,7 @@
             cancelegrid.AllowUserToResizeColumns = false;
             cancelegrid.AllowUserToResizeRows = false;
             cancelegrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            cancelegrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             cancelegrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             cancelegrid.Location = new Point(12, 106);
             cancelegrid.Name = "cancelegrid";
