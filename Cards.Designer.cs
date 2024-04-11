@@ -30,26 +30,29 @@
         {
             back = new Button();
             panel1 = new Panel();
-            textBox4 = new TextBox();
-            label5 = new Label();
-            notRelevant = new Button();
-            textBox3 = new TextBox();
-            label4 = new Label();
-            label3 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            interf = new GroupBox();
+            delete = new Button();
+            update = new Button();
             save = new Button();
             change = new Button();
-            delete = new Button();
-            label2 = new Label();
-            label1 = new Label();
             cardsgrid = new DataGridView();
             panel2 = new Panel();
             lable11 = new Label();
-            update = new Button();
+            label4 = new Label();
+            label3 = new Label();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            label2 = new Label();
+            textBox1 = new TextBox();
+            label5 = new Label();
+            label1 = new Label();
+            textBox4 = new TextBox();
+            groupBox1 = new GroupBox();
             panel1.SuspendLayout();
+            interf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cardsgrid).BeginInit();
             panel2.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // back
@@ -67,19 +70,8 @@
             // panel1
             // 
             panel1.BackColor = Color.AntiqueWhite;
-            panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(notRelevant);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(save);
-            panel1.Controls.Add(change);
-            panel1.Controls.Add(delete);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(groupBox1);
+            panel1.Controls.Add(interf);
             panel1.Controls.Add(cardsgrid);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
@@ -88,138 +80,77 @@
             panel1.Size = new Size(713, 599);
             panel1.TabIndex = 2;
             // 
-            // textBox4
+            // interf
             // 
-            textBox4.Location = new Point(296, 451);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(404, 31);
-            textBox4.TabIndex = 36;
+            interf.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            interf.AutoSize = true;
+            interf.Controls.Add(delete);
+            interf.Controls.Add(update);
+            interf.Controls.Add(save);
+            interf.Controls.Add(change);
+            interf.Location = new Point(536, 128);
+            interf.Name = "interf";
+            interf.Size = new Size(174, 249);
+            interf.TabIndex = 69;
+            interf.TabStop = false;
             // 
-            // label5
+            // delete
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("SimSun", 10F, FontStyle.Bold);
-            label5.Location = new Point(188, 457);
-            label5.Name = "label5";
-            label5.Size = new Size(105, 20);
-            label5.TabIndex = 35;
-            label5.Text = "Ф.И.О.";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
+            delete.Location = new Point(17, 174);
+            delete.Name = "delete";
+            delete.Size = new Size(151, 45);
+            delete.TabIndex = 8;
+            delete.Text = "Удалить";
+            delete.UseVisualStyleBackColor = true;
+            delete.Click += delete_Click;
             // 
-            // notRelevant
+            // update
             // 
-            notRelevant.Location = new Point(549, 343);
-            notRelevant.Name = "notRelevant";
-            notRelevant.Size = new Size(151, 45);
-            notRelevant.TabIndex = 34;
-            notRelevant.Text = "Должники";
-            notRelevant.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(296, 562);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(404, 31);
-            textBox3.TabIndex = 33;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("SimSun", 10F, FontStyle.Bold);
-            label4.Location = new Point(66, 561);
-            label4.Name = "label4";
-            label4.Size = new Size(230, 20);
-            label4.TabIndex = 32;
-            label4.Text = "Дата выдачи";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("SimSun", 10F, FontStyle.Bold);
-            label3.Location = new Point(66, 531);
-            label3.Name = "label3";
-            label3.Size = new Size(230, 20);
-            label3.TabIndex = 31;
-            label3.Text = "Номер книги";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(296, 525);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(404, 31);
-            textBox2.TabIndex = 30;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(296, 488);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(404, 31);
-            textBox1.TabIndex = 29;
+            update.Location = new Point(17, 21);
+            update.Name = "update";
+            update.Size = new Size(151, 45);
+            update.TabIndex = 24;
+            update.Text = "Обновить";
+            update.UseVisualStyleBackColor = true;
+            update.Click += update_Click;
             // 
             // save
             // 
-            save.Location = new Point(549, 270);
+            save.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            save.Location = new Point(17, 123);
             save.Name = "save";
             save.Size = new Size(151, 45);
-            save.TabIndex = 28;
-            save.Text = "Сохранить";
+            save.TabIndex = 10;
+            save.Text = "Добавить";
             save.UseVisualStyleBackColor = true;
             save.Click += save_Click;
             // 
             // change
             // 
-            change.Location = new Point(549, 189);
+            change.Location = new Point(17, 72);
             change.Name = "change";
             change.Size = new Size(151, 45);
-            change.TabIndex = 27;
+            change.TabIndex = 9;
             change.Text = "Изменить";
             change.UseVisualStyleBackColor = true;
-            // 
-            // delete
-            // 
-            delete.Location = new Point(549, 113);
-            delete.Name = "delete";
-            delete.Size = new Size(151, 45);
-            delete.TabIndex = 26;
-            delete.Text = "Удалить";
-            delete.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("SimSun", 10F, FontStyle.Bold);
-            label2.Location = new Point(0, 494);
-            label2.Name = "label2";
-            label2.Size = new Size(293, 20);
-            label2.TabIndex = 25;
-            label2.Text = "Название книги";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("SimSun", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(257, 420);
-            label1.Name = "label1";
-            label1.Size = new Size(213, 33);
-            label1.TabIndex = 24;
-            label1.Text = "Запись";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            change.Click += change_Click;
             // 
             // cardsgrid
             // 
+            cardsgrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            cardsgrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            cardsgrid.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             cardsgrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             cardsgrid.Location = new Point(12, 106);
             cardsgrid.Name = "cardsgrid";
             cardsgrid.RowHeadersWidth = 62;
-            cardsgrid.Size = new Size(521, 311);
+            cardsgrid.Size = new Size(518, 300);
             cardsgrid.TabIndex = 23;
             cardsgrid.CellClick += cardsgrid_CellClick;
             // 
             // panel2
             // 
             panel2.BackColor = Color.NavajoWhite;
-            panel2.Controls.Add(update);
             panel2.Controls.Add(lable11);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
@@ -238,15 +169,104 @@
             lable11.Text = "Карточки";
             lable11.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // update
+            // label4
             // 
-            update.Location = new Point(579, 31);
-            update.Name = "update";
-            update.Size = new Size(107, 43);
-            update.TabIndex = 24;
-            update.Text = "Обновить";
-            update.UseVisualStyleBackColor = true;
-            update.Click += update_Click;
+            label4.AutoSize = true;
+            label4.Font = new Font("SimSun", 10F, FontStyle.Bold);
+            label4.Location = new Point(62, 148);
+            label4.Name = "label4";
+            label4.Size = new Size(230, 20);
+            label4.TabIndex = 32;
+            label4.Text = "Дата выдачи";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("SimSun", 10F, FontStyle.Bold);
+            label3.Location = new Point(98, 118);
+            label3.Name = "label3";
+            label3.Size = new Size(188, 20);
+            label3.TabIndex = 31;
+            label3.Text = "Код книги";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(292, 149);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(404, 31);
+            textBox3.TabIndex = 33;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(292, 112);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(404, 31);
+            textBox2.TabIndex = 30;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("SimSun", 10F, FontStyle.Bold);
+            label2.Location = new Point(0, 80);
+            label2.Name = "label2";
+            label2.Size = new Size(293, 20);
+            label2.TabIndex = 25;
+            label2.Text = "Название книги";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(292, 75);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(404, 31);
+            textBox1.TabIndex = 29;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("SimSun", 10F, FontStyle.Bold);
+            label5.Location = new Point(184, 44);
+            label5.Name = "label5";
+            label5.Size = new Size(105, 20);
+            label5.TabIndex = 35;
+            label5.Text = "Ф.И.О.";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("SimSun", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(249, 6);
+            label1.Name = "label1";
+            label1.Size = new Size(213, 33);
+            label1.TabIndex = 24;
+            label1.Text = "Запись";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(292, 38);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(404, 31);
+            textBox4.TabIndex = 36;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            groupBox1.Controls.Add(textBox4);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Location = new Point(4, 411);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(706, 185);
+            groupBox1.TabIndex = 70;
+            groupBox1.TabStop = false;
             // 
             // Cards
             // 
@@ -260,9 +280,12 @@
             Load += Cards_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            interf.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)cardsgrid).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -272,20 +295,21 @@
         private Panel panel1;
         private Panel panel2;
         private Label lable11;
-        private Label label4;
-        private Label label3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private DataGridView cardsgrid;
+        private GroupBox interf;
+        private Button delete;
+        private Button update;
         private Button save;
         private Button change;
-        private Button delete;
-        private Label label2;
-        private Label label1;
-        private DataGridView cardsgrid;
-        private TextBox textBox3;
-        private Button notRelevant;
+        private GroupBox groupBox1;
         private TextBox textBox4;
+        private Label label1;
         private Label label5;
-        private Button update;
+        private Label label2;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private Label label4;
+        private TextBox textBox3;
+        private Label label3;
     }
 }

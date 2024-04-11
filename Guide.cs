@@ -108,6 +108,13 @@ namespace Library
 
             DB.closeConnection();
         }
+   
+        //Обновление данных
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            RefreshDataGrid(guidegrid);
+        }
 
         // Изменение данных
         private void change_Click(object sender, EventArgs e)
@@ -124,14 +131,7 @@ namespace Library
         }
 
         
-       
-        //Обновление данных
-
-        private void update_Click(object sender, EventArgs e)
-        {
-            RefreshDataGrid(guidegrid);
-        }
-
+    
 
         //удаление данных
 

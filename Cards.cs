@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Text;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Library
 {
@@ -41,7 +42,7 @@ namespace Library
             cardsgrid.Columns.Add("readerId", "№");
             cardsgrid.Columns.Add("readersName", "Ф.И.О.");
             cardsgrid.Columns.Add("name", "Название");
-            cardsgrid.Columns.Add("bookId", "№ Книги");
+            cardsgrid.Columns.Add("code", "Код Книги");
             cardsgrid.Columns.Add("data", "Дата выдачи");
 
             cardsgrid.Columns.Add("IsNew", string.Empty);
@@ -82,26 +83,56 @@ namespace Library
                 textBox3.Text = row.Cells[4].Value.ToString();
             }
         }
-
+        
         private void save_Click(object sender, EventArgs e)
         {
             DB.openConnection();
             var readersName = textBox4.Text;
             var name = textBox1.Text;
-            var bookId = textBox2.Text;
+            var code = textBox2.Text;
             var data = textBox3.Text;
             //int price; if(int.TryParce(местоположение, out название переменной))
-            var addQuery = $"insert into cards(readersName,name,bookId,data) values('{readersName}','{name}','{bookId}','{data}')";
+            var addQuery = $"insert into cards(readersName,name,code,data) values('{readersName}','{name}','{code}','{data}')";
             var command = new MySqlCommand(addQuery, DB.getConnection());
             command.ExecuteNonQuery();
 
             DB.closeConnection();
             // id прибавляется некорректно.
         }
-
+        // Обновление данных
         private void update_Click(object sender, EventArgs e)
         {
             RefreshDataGrid(cardsgrid);
+        }
+
+        // Изменение данных
+        private void change_Click(object sender, EventArgs e)
+        {
+
+            DB.openConnection();
+            var index = cardsgrid.CurrentCell.RowIndex;
+            var id = Convert.ToInt32(cardsgrid.Rows[index].Cells[0].Value);
+            var deleteQuery = $" UPDATE `cards` SET `readersName` = '{textBox4.Text}', `name` = '{textBox1.Text}', `code` = '{textBox2.Text}', `data` = '{textBox3.Text}' WHERE `cards`.`readerId` = {id};";
+            var command = new MySqlCommand(deleteQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+
+            DB.closeConnection();
+        }
+                                       
+                                         
+                                         
+        //удаление данных                
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            var index = cardsgrid.CurrentCell.RowIndex;
+            var id = Convert.ToInt32(cardsgrid.Rows[index].Cells[0].Value);
+            var deleteQuery = $"delete from cards where readerId = {id}";
+            var command = new MySqlCommand(deleteQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+            DB.closeConnection();
+
+
         }
     }
 }
