@@ -45,7 +45,6 @@
             save = new Button();
             change = new Button();
             delete = new Button();
-            saveChange = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guidegrid).BeginInit();
             panel1.SuspendLayout();
@@ -98,9 +97,14 @@
             // 
             // guidegrid
             // 
+            guidegrid.AllowUserToAddRows = false;
+            guidegrid.AllowUserToDeleteRows = false;
+            guidegrid.AllowUserToResizeColumns = false;
+            guidegrid.AllowUserToResizeRows = false;
             guidegrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             guidegrid.Location = new Point(12, 106);
             guidegrid.Name = "guidegrid";
+            guidegrid.ReadOnly = true;
             guidegrid.RowHeadersWidth = 62;
             guidegrid.Size = new Size(521, 311);
             guidegrid.TabIndex = 3;
@@ -131,7 +135,6 @@
             // panel1
             // 
             panel1.BackColor = Color.AntiqueWhite;
-            panel1.Controls.Add(saveChange);
             panel1.Controls.Add(textBox6);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(textBox5);
@@ -233,16 +236,6 @@
             delete.UseVisualStyleBackColor = true;
             delete.Click += delete_Click;
             // 
-            // saveChange
-            // 
-            saveChange.Location = new Point(550, 337);
-            saveChange.Name = "saveChange";
-            saveChange.Size = new Size(151, 45);
-            saveChange.TabIndex = 68;
-            saveChange.Text = "Сохранить";
-            saveChange.UseVisualStyleBackColor = true;
-            saveChange.Click += saveChange_Click;
-            // 
             // Guide
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -279,6 +272,5 @@
         private Label label5;
         private DataGridView guidegrid;
         private Button update;
-        private Button saveChange;
     }
 }
