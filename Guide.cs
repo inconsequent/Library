@@ -59,7 +59,7 @@ namespace Library
             guidegrid.Columns.Add("genre", "Жанр");
             guidegrid.Columns.Add("author", "Автор");
             guidegrid.Columns.Add("name", "Название");
-            guidegrid.Columns.Add("IsNew", string.Empty);
+           
         }
         private void ReadSingleRow(DataGridView dgw, IDataRecord record)
         {
@@ -113,10 +113,17 @@ namespace Library
         {
 
            DB.openConnection();
+            var index = guidegrid.CurrentCell.RowIndex;
+            var id = Convert.ToInt32(guidegrid.Rows[index].Cells[0].Value);
+            var deleteQuery = $" UPDATE `guide` SET `name` = '{textBox6.Text}', `author` = '{textBox5.Text}', `genre` = '{textBox4.Text}' WHERE `guide`.`bookId` = {id};";
+            var command = new MySqlCommand(deleteQuery, DB.getConnection());
+            command.ExecuteNonQuery();
 
-           
-           DB.closeConnection();
+            DB.closeConnection();
         }
+
+        
+       
         //Обновление данных
 
         private void update_Click(object sender, EventArgs e)
