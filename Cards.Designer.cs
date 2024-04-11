@@ -31,6 +31,8 @@
             back = new Button();
             panel1 = new Panel();
             groupBox1 = new GroupBox();
+            label6 = new Label();
+            textBox5 = new TextBox();
             textBox4 = new TextBox();
             label1 = new Label();
             label5 = new Label();
@@ -83,6 +85,8 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(textBox5);
             groupBox1.Controls.Add(textBox4);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(label5);
@@ -92,11 +96,28 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(textBox3);
             groupBox1.Controls.Add(label3);
-            groupBox1.Location = new Point(4, 411);
+            groupBox1.Location = new Point(4, 366);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(706, 185);
+            groupBox1.Size = new Size(706, 230);
             groupBox1.TabIndex = 70;
             groupBox1.TabStop = false;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("SimSun", 10F, FontStyle.Bold);
+            label6.Location = new Point(21, 192);
+            label6.Name = "label6";
+            label6.Size = new Size(272, 20);
+            label6.TabIndex = 37;
+            label6.Text = "Дата возврата";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(292, 186);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(404, 31);
+            textBox5.TabIndex = 38;
             // 
             // textBox4
             // 
@@ -156,7 +177,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("SimSun", 10F, FontStyle.Bold);
-            label4.Location = new Point(62, 148);
+            label4.Location = new Point(63, 155);
             label4.Name = "label4";
             label4.Size = new Size(230, 20);
             label4.TabIndex = 32;
@@ -187,15 +208,15 @@
             interf.Controls.Add(update);
             interf.Controls.Add(save);
             interf.Controls.Add(change);
-            interf.Location = new Point(536, 128);
+            interf.Location = new Point(536, 106);
             interf.Name = "interf";
-            interf.Size = new Size(174, 249);
+            interf.Size = new Size(174, 289);
             interf.TabIndex = 69;
             interf.TabStop = false;
             // 
             // delete
             // 
-            delete.Location = new Point(17, 174);
+            delete.Location = new Point(17, 163);
             delete.Name = "delete";
             delete.Size = new Size(151, 45);
             delete.TabIndex = 8;
@@ -205,7 +226,7 @@
             // 
             // update
             // 
-            update.Location = new Point(17, 21);
+            update.Location = new Point(17, 10);
             update.Name = "update";
             update.Size = new Size(151, 45);
             update.TabIndex = 24;
@@ -216,7 +237,7 @@
             // save
             // 
             save.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            save.Location = new Point(17, 123);
+            save.Location = new Point(17, 112);
             save.Name = "save";
             save.Size = new Size(151, 45);
             save.TabIndex = 10;
@@ -226,7 +247,7 @@
             // 
             // change
             // 
-            change.Location = new Point(17, 72);
+            change.Location = new Point(17, 61);
             change.Name = "change";
             change.Size = new Size(151, 45);
             change.TabIndex = 9;
@@ -242,7 +263,7 @@
             cardsgrid.Location = new Point(12, 106);
             cardsgrid.Name = "cardsgrid";
             cardsgrid.RowHeadersWidth = 62;
-            cardsgrid.Size = new Size(518, 300);
+            cardsgrid.Size = new Size(518, 254);
             cardsgrid.TabIndex = 23;
             cardsgrid.CellClick += cardsgrid_CellClick;
             // 
@@ -310,5 +331,7 @@
         private Label label4;
         private TextBox textBox3;
         private Label label3;
+        private Label label6;
+        private TextBox textBox5;
     }
 }

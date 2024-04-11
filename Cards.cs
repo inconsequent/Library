@@ -44,11 +44,12 @@ namespace Library
             cardsgrid.Columns.Add("name", "Название");
             cardsgrid.Columns.Add("code", "Код Книги");
             cardsgrid.Columns.Add("data", "Дата выдачи");
+            cardsgrid.Columns.Add("dataB", "Дата возврата");
 
         }
         private void ReadSingleRow(DataGridView dgw, IDataRecord record)
         {
-            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetInt32(3), record.GetString(4), RowState.ModifiedNew);
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetInt32(3), record.GetString(4), record.GetString(5), RowState.ModifiedNew);
         }
 
         private void RefreshDataGrid(DataGridView dgw)
@@ -79,6 +80,7 @@ namespace Library
                 textBox1.Text = row.Cells[2].Value.ToString();
                 textBox2.Text = row.Cells[3].Value.ToString();
                 textBox3.Text = row.Cells[4].Value.ToString();
+                textBox5.Text = row.Cells[5].Value.ToString();
             }
         }
         
@@ -89,8 +91,9 @@ namespace Library
             var name = textBox1.Text;
             var code = textBox2.Text;
             var data = textBox3.Text;
+            var dataB =textBox5.Text;
             //int price; if(int.TryParce(местоположение, out название переменной))
-            var addQuery = $"insert into cards(readersName,name,code,data) values('{readersName}','{name}','{code}','{data}')";
+            var addQuery = $"insert into cards(readersName,name,code,data,dataB) values('{readersName}','{name}','{code}','{data}','{dataB}')";
             var command = new MySqlCommand(addQuery, DB.getConnection());
             command.ExecuteNonQuery();
 
@@ -110,7 +113,7 @@ namespace Library
             DB.openConnection();
             var index = cardsgrid.CurrentCell.RowIndex;
             var id = Convert.ToInt32(cardsgrid.Rows[index].Cells[0].Value);
-            var deleteQuery = $" UPDATE `cards` SET `readersName` = '{textBox4.Text}', `name` = '{textBox1.Text}', `code` = '{textBox2.Text}', `data` = '{textBox3.Text}' WHERE `cards`.`readerId` = {id};";
+            var deleteQuery = $" UPDATE `cards` SET `readersName` = '{textBox4.Text}', `name` = '{textBox1.Text}', `code` = '{textBox2.Text}', `data` = '{textBox3.Text}, `dataB` = '{textBox5.Text}' WHERE `cards`.`readerId` = {id};";
             var command = new MySqlCommand(deleteQuery, DB.getConnection());
             command.ExecuteNonQuery();
 
@@ -132,5 +135,6 @@ namespace Library
 
 
         }
+
     }
 }
