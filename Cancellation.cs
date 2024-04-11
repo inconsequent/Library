@@ -101,9 +101,41 @@ namespace Library
 
         }
 
+        //Обновление данных
         private void update_Click(object sender, EventArgs e)
         {
             RefreshDataGrid(cancelegrid);
         }
+
+        // Изменение данных
+        private void change_Click(object sender, EventArgs e)
+        {
+
+            DB.openConnection();
+            var index = cancelegrid.CurrentCell.RowIndex;
+            var id = Convert.ToInt32(cancelegrid.Rows[index].Cells[0].Value);
+            var deleteQuery = $" UPDATE `cancellation` SET `name` = '{textBox1.Text}', `reason` = '{textBox2.Text}' WHERE `cancellation`.`cancId` = {id};";
+            var command = new MySqlCommand(deleteQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+
+            DB.closeConnection();
+        }
+
+        //удаление данных
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            var index = cancelegrid.CurrentCell.RowIndex;
+            var id = Convert.ToInt32(cancelegrid.Rows[index].Cells[0].Value);
+            var deleteQuery = $"delete from cancellation where cancId = {id}";
+            var command = new MySqlCommand(deleteQuery, DB.getConnection());
+            command.ExecuteNonQuery();
+            DB.closeConnection();
+
+
+        }
+
+
+
     }
 }

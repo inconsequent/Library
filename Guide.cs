@@ -109,6 +109,7 @@ namespace Library
             DB.closeConnection();
         }
 
+        // Изменение данных
         private void change_Click(object sender, EventArgs e)
         {
 

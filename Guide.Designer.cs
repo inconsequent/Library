@@ -66,6 +66,7 @@
             // 
             // lable11
             // 
+            lable11.Anchor = AnchorStyles.None;
             lable11.AutoSize = true;
             lable11.Font = new Font("SimSun", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lable11.Location = new Point(188, 30);
@@ -73,7 +74,7 @@
             lable11.Size = new Size(345, 33);
             lable11.TabIndex = 0;
             lable11.Text = "Справочник";
-            lable11.TextAlign = ContentAlignment.MiddleCenter;
+            lable11.TextAlign = ContentAlignment.TopCenter;
             // 
             // update
             // 
